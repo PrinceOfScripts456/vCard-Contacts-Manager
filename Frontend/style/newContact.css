@@ -1,0 +1,12 @@
+
+body {
+    min-height: 100vh;
+    background: var(--body-background);
+}
+
+.custom-box {
+    border-color: #6c757d;
+    --bs-btn-focus-shadow-rgb: none;
+    box-shadow: none;
+    border-color: none;
+}

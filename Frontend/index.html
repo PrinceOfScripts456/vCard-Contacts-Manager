@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.vcf handler</title>
+    <link rel="stylesheet" href="style/theme.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <button class="theme-btn" type="button" onclick="setThemeviaCSSVariables()">toggle theme</button>
+    <div class="glass-card">
+        <div class="badge">
+            <div class="dot"></div>
+            Secure VCF Upload
+        </div>
+        <a class="newContact" href="views/newContact.html">Create new Contact</a>
+        <h1>Upload Your<br>
+            Contacts File
+        </h1>
+        <p class="subtitle">Drag & drop your .vcf file below or browse from your device. Your file will be securely sent to the backend API.</p>
+        <label for="vcfInFile" class="upload-box" id="vcfDragFile">
+            <div class="upload-icon">📇</div>
+            <div class="upload-title">Choose a .vcf File</div>
+            <div class="upload-desc">Supports vCard contact files only</div>
+        </label>
+        <input type="file" id="vcfInFile" accept=".vcf">
+        <div class="file-info" id="fileInfo">
+            <div class="file-name" id="fileName"></div>
+            <div class="file-size" id="fileSize"></div>
+        </div>
+        <button type="button" class="upload-btn" id="uploadBtn" disabled>Upload File</button>
+        <div class="status" id="status"></div>
+        <div class="footer"> Modern frontend • Glassmorpihsm UI</div>
+    </div>
+    <script src="script/utils.js"></script>
+    <script src="script/app.js"></script>
+</body>
+</html>
