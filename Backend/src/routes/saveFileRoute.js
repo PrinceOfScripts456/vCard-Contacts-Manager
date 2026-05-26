@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 function saveToFile( vCardsMemory , filename = "vCards") {
-    const filePath = path.join(__dirname, `../../public/${filename}.json`);
+    const filePath = path.join(__dirname, `../../public/exports/${filename}.json`);
 
     fs.writeFileSync(
         filePath,

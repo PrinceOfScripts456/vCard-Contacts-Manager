@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/theme.css">
+    <link rel="stylesheet" href="../style/newContact.css">
+</head>
+
+<body data-bs-theme="light">
+
+    <!-- Nav Bar -->
+    <%- include('partials/header') %>
+
+    <div class="row col-8 m-auto py-5">
+        <div class="card">
+
+            <!-- Profile Picture -->
+            <img src="../images/default.svg" id="image_preview" class="d-block rounded-circle mb-3"
+                width="120" alt=". . .">
+
+            <iframe name="hiddenFrame" style="display:none;"></iframe>
+            <form id="newContactForm" action="http://localhost:5000/contacts/new/" method="post" autocomplete="on">
+
+                <div class="row">
+                    <!-- Full Name -->
+                    <div class="col-xl-3 col-lg-3 col-md-4 mb-3">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" name="fullname" placeholder="Full name">
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="col-xl-4 col-lg-5 col-md-6">
+                        <label class="form-label">Phone Number</label>
+                        <div class="input-group mb-3">
+                            <input type="tel" class="form-control w-50" name="telephone" placeholder="Phone number">
+
+                            <input type="button" name="telFor" value="For?"
+                                class="btn btn-outline-secondary option-value">
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end  options">
+                                <li><a class="dropdown-item  option-choose">Home</a></li>
+                                <li><a class="dropdown-item  option-choose">Work</a></li>
+                                <li><a class="dropdown-item  option-choose-x">Custom</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item  option-new-telephone">Add new number</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Email -->
+                    <div class="col-xl-4 col-lg-5 col-md-7">
+                        <label class="form-label">Email</label>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control w-50" name="email" placeholder="Email"
+                                autocomplete="on">
+
+                            <input type="button" name="emailFor" value="For?"
+                                class="btn btn-outline-secondary option-value">
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end  options">
+                                <li><a class="dropdown-item  option-choose">Action</a></li>
+                                <li><a class="dropdown-item  option-choose">Another action</a></li>
+                                <li><a class="dropdown-item  option-choose-x">Custom</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item  option-new-email">Add new email</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Date -->
+                    <div class="col-xl-3 col-lg-4 col-md-5">
+                        <label class="form-label">Date</label>
+                        <div class="input-group mb-4">
+                            <input type="date" class="form-control w-50" name="date">
+
+                            <input type="button" name="dateFor" value="For?"
+                                class="btn btn-outline-secondary option-value">
+                            <button type="button"
+                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end  options">
+                                <li><a class="dropdown-item  option-choose">Birthday</a></li>
+                                <li><a class="dropdown-item  option-choose">Anniversary</a></li>
+                                <li><a class="dropdown-item  option-choose-x">Custom</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item  option-new-date">Add new Date</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div class="row col-xl-4 col-lg-5 col-md-7 mb-4">
+                    <div class="input-group">
+                        <span class="input-group-text">Note</span>
+                        <textarea rows="3" name="note" class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="../script/utils.js"></script>
+    <script>setThemeviaCSSVariables('light');</script>
+    <script src="../script/newContact.js"></script>
+
+</body>
+
+</html>
