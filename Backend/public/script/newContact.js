@@ -1,47 +1,43 @@
 
 // Submit Form
-const form = document.getElementById('newContactForm');
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+// const form = document.getElementById('newContactForm');
+// form.addEventListener('submit', async (e) => {
+//     e.preventDefault();
 
-    form.classList.add('was-validated');
+//     form.classList.add('was-validated');
 
-    if (!form.checkValidity()) {
-        return console.warn("form validation failed, submit aborted!");
-    }
+//     if (!form.checkValidity()) {
+//         return console.warn("form validation failed, submit aborted!");
+//     }
 
-    const formData = new FormData(form);
+//     const formData = new FormData(form);
 
-    let data = {};
+//     let data = {};
 
-    for (const [key, value] of formData.entries()) {
-        if (data[key]) {
-            // if already exists → convert to array
-            data[key] = Array.isArray(data[key])
-                ? [...data[key], value.trim()]
-                : [data[key], value.trim()];
-        } else {
-            data[key] = value.trim();
-        }
-    }
+//     for (const [key, value] of formData.entries()) {
+//         if (data[key]) {
+//             // if already exists → convert to array
+//             data[key] = Array.isArray(data[key])
+//                 ? [...data[key], value.trim()]
+//                 : [data[key], value.trim()];
+//         } else {
+//             data[key] = value.trim();
+//         }
+//     }
 
-    if (Object.keys(data).length === 0) {
-        return console.warn("no data in send buffer - submit failed");
-    }
+//     if (Object.keys(data).length === 0) {
+//         return console.warn("no data in send buffer - submit failed");
+//     }
 
-    const res = await fetch('http://localhost:5000/contacts/new', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-    }).then((res) => {
-        if (res.redirected) {
-            window.location.href = res.url;
-        }
-    });
+//     const res = await fetch('http://localhost:5000/contacts/new', {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify(data)
+//     });
 
-    // const result = await res;
-    // console.log(result);
-});
+//     const result = await res;
+//     console.log(result);
+// });
 
 
 // handle select-add-delete options

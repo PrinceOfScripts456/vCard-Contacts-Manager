@@ -17,9 +17,10 @@ router.post("/", (req, res) => {
 
     saveToFile(vCardsMemory, "vCards");
 
+    console.log(vCardsMemory);
     console.log("POST: /contacts/new/  -> Saving new Contact(BETA)");
 
-    res.redirect("/contacts/");
+    res.redirect("/contacts");
 });
 
 module.exports = router;

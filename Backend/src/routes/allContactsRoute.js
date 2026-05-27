@@ -5,12 +5,12 @@ const { vCardsMemory } = require("../utils/utils");
 const { initializeVCards } = require("../utils/init");
 const contacts = vCardsMemory;
 
-initializeVCards();
+// initializeVCards();
 
 router.get("/", (req, res) => {
 
+    console.log("GET: /contacts/  -> Showing all Contacts Page");
     res.render("allContacts", { contacts });
-    console.log("POST: /contacts/  -> Showing all Contacts Page");
 
 });
 

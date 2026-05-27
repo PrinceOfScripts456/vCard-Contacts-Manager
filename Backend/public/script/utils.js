@@ -21,20 +21,6 @@ function formatSize(bytes) {
     }
 }
 
-
-function setThemeviaCSSVariables(theme) {
-
-    if (theme === 'dark') {
-        document.body.classList.remove('light-theme');
-    }
-    else if (theme === 'light') {
-        document.body.classList.add('light-theme');
-    }
-    else {
-        document.body.classList.toggle('light-theme');
-    }
-}
-
 // Refer caller input
 // <div id="phoneNum"> Number </div>
 // <a onclick="optionChange(event, 'phoneNum')"> 0300-xyz </a>

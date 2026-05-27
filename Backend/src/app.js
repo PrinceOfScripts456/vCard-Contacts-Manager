@@ -3,7 +3,6 @@ const cors = require("cors");
 const path = require("path");
 
 const fileRoute = require("./routes/fileRoute");
-const vCardRoute = require("./routes/vcardRoute");
 const newContactRoute = require("./routes/newContactRoute");
 // const editContactRoute = require("./routes/editContactRoute");
 const allContactsRoute = require("./routes/allContactsRoute");
@@ -22,7 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // Routes
 // app.use("/file", fileRoute);
-// app.use("/vCards", vCardRoute);
 app.use("/contacts", allContactsRoute);
 app.use("/contacts/new", newContactRoute);
 // app.use("contacts/:id/edit", editContactRoute);
