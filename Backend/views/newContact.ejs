@@ -14,20 +14,24 @@
     <!-- Nav Bar -->
     <%- include('partials/header') %>
 
+        <!-- Container -->
         <div class="card m-2 p-2">
 
+            <!-- Profile Picture -->
             <div class="row">
                 <div class="col">
                     <img src="/images/default.svg" class="d-block rounded-circle mb-3" width="120px" alt="...">
                 </div>
             </div>
 
+            <!-- Data Form -->
             <form method="post" action="/contacts/new" id="newContactForm" class="row row-cols-1 g-3 needs-validation"
                 novalidate>
 
+                <!-- First Name -->
                 <div class="col-md-4">
-                    <label for="validationCustom01" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="validationCustom01" name="firstName" value="Mark"
+                    <label for="validationFirstName" class="form-label">First name</label>
+                    <input type="text" class="form-control" id="validationFirstName" name="firstName" value="Your"
                         required>
                     <div class="valid-feedback">
                         Looks good!
@@ -36,9 +40,11 @@
                         Please choose a first name.
                     </div>
                 </div>
+
+                <!-- Last Name -->
                 <div class="col-md-4">
-                    <label for="validationCustom02" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="validationCustom02" name="lastName" value="Otto"
+                    <label for="validationLastName" class="form-label">Last name</label>
+                    <input type="text" class="form-control" id="validationLastName" name="lastName" value="Name?"
                         required>
                     <div class="valid-feedback">
                         Looks good!
@@ -47,48 +53,52 @@
                         Please choose a last name.
                     </div>
                 </div>
+
+                <!-- Phone Number -->
                 <div class="col-md-4">
-                    <label for="validationCustomUsername" class="form-label">email</label>
+                    <label for="validationPhoneNumber" class="form-label">Phone Number</label>
+                    <input type="number" class="form-control" id="validationPhoneNumber" name="telephone" value="03420290152"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter a phone number.
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-4">
+                    <label for="validationEmail" class="form-label">Email</label>
                     <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="email" class="form-control" id="validationCustomUsername" name="email"
-                            aria-describedby="inputGroupPrepend" required>
+                        <input type="email" class="form-control" id="validationEmail" name="email"
+                            value="google123@gmail.com" aria-describedby="inputGroupPrepend">
                         <div class="invalid-feedback">
                             Please choose a valid email.
                         </div>
                     </div>
                 </div>
+
+                <!-- Date -->
                 <div class="col-md-6">
-                    <label for="validationCustom03" class="form-label">Date</label>
-                    <input type="date" class="form-control" id="validationCustom03" name="date">
+                    <label for="validationDate" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="validationDate" name="date">
                     <div class="invalid-feedback">
                         Please provide a date.
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <label for="validationCustom04" class="form-label">State</label>
-                    <select class="form-select" id="validationCustom04">
-                        <option selected disabled value="">Choose...</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <label for="validationCustom05" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="validationCustom05">
-                    <div class="invalid-feedback">
-                        Please provide a valid zip.
-                    </div>
-                </div>
+
+                <!-- Note -->
                 <div class="col-md-4">
-                    <label for="validationCustom06" class="form-label">Note</label>
-                    <textarea class="form-control" id="validationCustom06" name="note"></textarea>
+                    <label for="validationNote" class="form-label">Note</label>
+                    <textarea class="form-control" id="validationNote" name="note" rows="3"></textarea>
                     <div class="invalid-feedback">
                         Please provide a valid Note.
                     </div>
                 </div>
+
+                <!-- Terms and Conditions -->
                 <div class="col-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -100,9 +110,12 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Submit Button -->
                 <div class="col-12">
                     <button class="btn btn-primary" type="submit">Submit form</button>
                 </div>
+
             </form>
 
         </div>
