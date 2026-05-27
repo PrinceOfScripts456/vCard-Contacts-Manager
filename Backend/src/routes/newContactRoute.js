@@ -7,6 +7,7 @@ const saveToFile = require("../routes/saveFileRoute");
 // Create new Contact
 router.get("/", (req, res) => {
     res.render("newContact");
+    console.log("GET: /contacts/new/  -> showing Create new Contact Page");
 });
 
 // Save new Contact
@@ -16,8 +17,9 @@ router.post("/", (req, res) => {
 
     saveToFile(vCardsMemory, "vCards");
 
-    res.send(req.body);
-    // res.redirect("http://127.0.0.1:5500/vCard-Contacts-Manager/Frontend/views/newContact.html");
+    console.log("POST: /contacts/new/  -> Saving new Contact(BETA)");
+
+    res.redirect("/contacts/");
 });
 
 module.exports = router;

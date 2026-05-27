@@ -21,15 +21,15 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Routes
-app.use("/file", fileRoute);
-app.use("/vCards", vCardRoute);
+// app.use("/file", fileRoute);
+// app.use("/vCards", vCardRoute);
 app.use("/contacts", allContactsRoute);
 app.use("/contacts/new", newContactRoute);
 // app.use("contacts/:id/edit", editContactRoute);
 
 
 app.get("/", (req, res) => {
-    res.send("hey");
+    res.send("server is running...");
 });
 
 
