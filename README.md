@@ -2,6 +2,8 @@
 This is my first project.
 
 > Development RoadMap:
+- edit contact feature
+- delete contact feature
 - to be continued...
 
 # node.js Commands:
