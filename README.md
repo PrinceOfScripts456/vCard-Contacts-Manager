@@ -2,9 +2,6 @@
 This is my first project.
 
 > Development RoadMap:
-- create a webpage which shows all contacts (from JSON object)
-- provides an option to export JSON
-- provides as option to import from JSON
 - to be continued...
 
 # node.js Commands:

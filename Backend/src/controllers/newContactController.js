@@ -14,7 +14,7 @@ function saveToMemory(req, res, next) {
     data.email     = req.body.email.trim();
     data.date      = req.body.date;
     data.note      = req.body.note.trim();
-    data.created_at= Date.now();
+    data.created_at= `${ Date.now() }`;
 
     if (req.body.date.length === 10) { // yyyy-mm-yy
         const [year, month, day] = req.body.date.split("-");

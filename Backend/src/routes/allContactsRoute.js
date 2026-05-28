@@ -10,6 +10,7 @@ const contacts = vCardsMemory;
 router.get("/", (req, res) => {
 
     console.log("GET: /contacts/  -> Showing all Contacts Page");
+    console.log(contacts);
     res.render("allContacts", { contacts });
 
 });

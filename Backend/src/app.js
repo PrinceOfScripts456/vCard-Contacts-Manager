@@ -6,6 +6,8 @@ const fileRoute = require("./routes/fileRoute");
 const newContactRoute = require("./routes/newContactRoute");
 // const editContactRoute = require("./routes/editContactRoute");
 const allContactsRoute = require("./routes/allContactsRoute");
+const importContacts = require("./routes/importContacts");
+const exportContacts = require("./routes/exportContacts");
 
 const app = express();
 
@@ -20,9 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Routes
-// app.use("/file", fileRoute);
+app.use("/file", fileRoute);
 app.use("/contacts", allContactsRoute);
 app.use("/contacts/new", newContactRoute);
+app.use("/contacts/import", importContacts);
+app.use("/contacts/export", exportContacts);
 // app.use("contacts/:id/edit", editContactRoute);
 
 
