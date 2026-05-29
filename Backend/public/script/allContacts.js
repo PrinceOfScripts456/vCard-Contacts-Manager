@@ -16,7 +16,7 @@ exportBtn.addEventListener("click", async () => {
             const a = document.createElement("a");
 
             a.href = url;
-            a.download = "data.json";
+            a.download = "download.json";
 
             document.body.appendChild(a);
 
@@ -95,13 +95,47 @@ ImportBtn.addEventListener("click", async () => {
 });
 
 
+document.querySelectorAll(".deleteBtn01").forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+        e.preventDefault();
+
+        const id = e.target.getAttribute("data-id");
+
+        const confirmDelete = confirm("Are you sure you want to delete this contact?");
+
+        if (!confirmDelete) return;
+
+        try {
+            const response = await fetch(`/contacts/${id}`, {
+                method: "DELETE",
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                alert("Contact deleted successfully");
+
+                // remove card from UI without refresh
+                btn.closest(".col").remove();
+            } else {
+                alert(data.message || "Delete failed");
+            }
+
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong");
+        }
+    });
+});
+
+
 // Bootstrap toast trigger
 const toastTrigger = document.getElementById('liveToastBtn');
 const toastLiveExample = document.getElementById('liveToast');
 
 if (toastTrigger) {
-  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-  toastTrigger.addEventListener('click', () => {
-    toastBootstrap.show()
-  });
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+    toastTrigger.addEventListener('click', () => {
+        toastBootstrap.show()
+    });
 }

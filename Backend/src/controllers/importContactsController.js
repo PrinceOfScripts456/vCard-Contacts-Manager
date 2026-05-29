@@ -1,7 +1,7 @@
 
-let { vCardsMemory } = require("../utils/utils");
+const ContactDB = require("../models/contact");
 
-function importFile (req, res, next) {
+async function importFile(req, res, next) {
 
     try {
 
@@ -11,10 +11,7 @@ function importFile (req, res, next) {
 
         const jsonData = JSON.parse(fileContent);
 
-        vCardsMemory.length = 0;
-        vCardsMemory.push(...jsonData);
-
-        console.log("  fun(): imported to RAM, saved in Memory");
+        await ContactDB.create(jsonData);
 
     } catch (err) {
         console.log(err);

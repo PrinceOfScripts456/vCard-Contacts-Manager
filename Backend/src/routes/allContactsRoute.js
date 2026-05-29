@@ -1,16 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-const { vCardsMemory } = require("../utils/utils");
-// const { initializeVCards } = require("../utils/init");
-const contacts = vCardsMemory;
+const ContactDB = require("../models/contact");
 
-// initializeVCards();
-
-router.get("/", (req, res) => {
-
+router.get("/", async (req, res) => {
     console.log("GET: /contacts/  -> Showing all Contacts Page");
+
+    const contacts = await ContactDB.find();
+
     console.log(contacts);
+
     res.render("allContacts", { contacts });
 
 });

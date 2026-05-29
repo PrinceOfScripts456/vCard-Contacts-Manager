@@ -100,8 +100,8 @@
                         </div>
                     </div>
                     <div class="m-2">
-                        <a class="btn btn-primary mx-0">Edit</a>
-                        <a class="btn btn-danger mx-1">Delete</a>
+                        <a data-id="<%= contact._id %>" href="/contacts/<%= contact._id %>" class="btn btn-primary mx-0 editBtn01">Edit</a>
+                        <a data-id="<%= contact._id %>" class="btn btn-danger mx-1 deleteBtn01">Delete</a>
                     </div>
                 </div>
                 <% }); %>

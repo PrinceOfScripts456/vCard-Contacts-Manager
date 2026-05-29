@@ -1,26 +1,39 @@
 const express = require("express");
-const { vCardsMemory } = require("../utils/utils");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    console.log("GET: /contacts/export  -> exporting file");
+const ContactDB = require("../models/contact");
 
-    if(vCardsMemory.length === 0) {
-        return res.status(404).json({
-            message: "data does not exist on server."
+router.get("/", async (req, res) => {
+    try {
+        console.log("GET: /contacts/export  -> exporting file");
+
+        const data = await ContactDB.find();
+
+        if (data.length === 0) {
+            return res.status(404).json({
+                message: "data does not exist on server."
+            });
+        }
+
+        let filename = req.query.filename || "contacts";
+        filename = filename.replace(/[^a-zA-Z0-9-_]/g, "");
+
+        res.setHeader(
+            "Content-Disposition",
+            `attachment; filename=${filename}`
+        );
+
+        res.setHeader("Content-Type", "application/json");
+
+        res.send(JSON.stringify(data, null, 2));
+
+    } catch (err) {
+        console.error(error);
+
+        res.status(500).json({
+            message: "Export failed",
         });
     }
-
-    const data = vCardsMemory;
-
-    res.setHeader(
-        "Content-Disposition",
-        "attachment; filename=data.json"
-    );
-
-    res.setHeader("Content-Type", "application/json");
-
-    res.send(JSON.stringify(data, null, 2));
 });
 
 module.exports = router;

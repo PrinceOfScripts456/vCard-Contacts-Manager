@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { vCardsMemory } = require("../utils/utils");
 const { validateRecievedvCard } = require("../middlewares/newContactMiddleware");
-const { saveToMemory, saveToFile } = require("../controllers/newContactController");
+const { saveContact } = require("../controllers/newContactController");
 
 
 router.get("/", (req, res) => {
@@ -16,7 +15,7 @@ router.post("/", (req, res, next) => {
     console.log("POST: /contacts/new/  -> Saving new Contact");
     next();
 },
-    validateRecievedvCard, saveToMemory, saveToFile(vCardsMemory), (req, res) => {
+    validateRecievedvCard, saveContact, (req, res) => {
         res.redirect("/contacts");
     }
 );

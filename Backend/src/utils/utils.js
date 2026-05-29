@@ -8,6 +8,4 @@ class UploadError extends Error {
     }
 }
 
-const vCardsMemory = [];
-
-module.exports = { UploadError, vCardsMemory };
+module.exports = { UploadError };

@@ -1,7 +1,7 @@
 
 function initializeVCards() {
 
-    const { vCardsMemory } = require("./utils");
+    const storage = require("../storage/autoStorage");
 
     const contacts = {
         name: "Hamza",
@@ -11,7 +11,7 @@ function initializeVCards() {
         note: "Life is very strange Stranger!"
     };
 
-    vCardsMemory.push(contacts);
+    storage.createContact(contacts);
 
     console.log("vCards initialization complete.");
 }
