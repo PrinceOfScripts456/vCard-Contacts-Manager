@@ -5,17 +5,17 @@ const upload = require("../middlewares/importContacts");
 const { importFile } = require("../controllers/importContactsController");
 
 
-router.post("/", (req, res, next) => {
-
-    console.log("POST: /contacts/import  -> importing file");
-    next();
-
-}, upload.single("file"), importFile, (req, res) => {
-
-    res.json({
-        redirectTo: "/contacts"
-    });
-
-});
+router.post("/",
+    (req, res, next) => {
+        console.log("POST: /contacts/import  -> importing file");
+        next();
+    },
+    upload.single("file"),
+    importFile,
+    (req, res) => {
+        res.json({ redirectTo: "/contacts" });
+        console.log("--------------------------------");
+    }
+);
 
 module.exports = router;

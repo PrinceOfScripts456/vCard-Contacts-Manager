@@ -64,7 +64,7 @@ document.querySelectorAll(".deleteBtn01").forEach((btn) => {
             const data = await response.json();
 
             if (response.ok) {
-                alert("Contact deleted successfully");
+                // alert("Contact deleted successfully");
 
                 // remove card from UI without refresh
                 btn.closest(".col").remove();

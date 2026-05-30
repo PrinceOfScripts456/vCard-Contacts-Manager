@@ -41,8 +41,13 @@ form.addEventListener('submit', async (event) => {
 
         if (response.ok) {
             console.log("Edited successfully");
+
+            setTimeout(() => {
+                window.location.href = data.redirectTo;
+            }, 3000);
+
         } else {
-            console.log(data.message || "Edit failed");
+            console.log(data || "unexpected response");
         }
 
     } catch (error) {

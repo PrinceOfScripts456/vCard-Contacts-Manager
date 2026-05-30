@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
+
 const newContactRoute = require("./routes/newContactRoute");
 const editContactRoute = require("./routes/editContactRoute");
 const allContactsRoute = require("./routes/allContactsRoute");
@@ -10,11 +11,14 @@ const exportContacts = require("./routes/exportContacts");
 const deleteContactRoute = require("./routes/deleteContactRoute");
 const dbTestRoute = require("./routes/dbTestRoute");
 
+
 const app = express();
+
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../views"));
 app.use(express.static("public"));
+
 
 // Middlewares
 app.use(cors());
@@ -33,23 +37,33 @@ app.use("/contacts", deleteContactRoute);
 app.use("/db", dbTestRoute);
 
 app.get("/", (req, res) => {
+    console.log("GET: /  -> Showing all file upload page");
     res.render("importFile");
+    console.log("--------------------------------");
 });
 
+app.use("/", (req, res) => {
+    res.send("Error 404 - Page not found.");
+});
 
 module.exports = app;
 
 
 /*
 Routes info:
-    > Save new Contact
-    GET: http://localhost:5000/contacts/new
-    POST: http://localhost:5000/contacts/new
 
-    > Edit Contact
-    PATCH: http://localhost:5000/contacts/:id/
+    GET:   http://localhost:5000/contacts/          ->  show all contacts
 
-    > View all Contacts
-    GET: http://localhost:5000/contacts/
+    GET:   http://localhost:5000/contacts/new/      -> show new contact form page
+    POST:  http://localhost:5000/contacts/new/      -> save new contact
+    
+    POST:  http://localhost:5000/contacts/import/   -> import file (.json for now)
+
+    GET:   http://localhost:5000/contacts/export/   -> provides export file
+
+    GET:   http://localhost:5000/contacts/:id/      -> show contact
+    PATCH: http://localhost:5000/contacts/:id/      -> save edited contact
+
+    DELETE: http://localhost:5000/contacts/:id/     -> delete contact
 
 */

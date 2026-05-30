@@ -1,7 +1,6 @@
+const storage = require("../storage/autoStorage");
 
-function initializeVCards() {
-
-    const storage = require("../storage/autoStorage");
+async function initializeVCards() {
 
     const contacts = {
         name: "Hamza",
@@ -11,7 +10,12 @@ function initializeVCards() {
         note: "Life is very strange Stranger!"
     };
 
-    storage.createContact(contacts);
+    let createdContacts = await storage.create(contacts);
+
+    if (!createdContacts) {
+        console.error(" fun(): vCards initialization failed due to storage error");
+        return;
+    }
 
     console.log("vCards initialization complete.");
 }

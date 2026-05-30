@@ -1,4 +1,3 @@
-
 const storage = require("../storage/autoStorage");
 
 
@@ -12,11 +11,27 @@ async function importFile(req, res, next) {
 
         const jsonData = JSON.parse(fileContent);
 
-        await storage.create(jsonData);
+        const createdContacts = await storage.create(jsonData);
+
+        if (!createdContacts) {
+            console.error(" fun(): file importing failed");
+
+            return res.status(500).json({
+                message: "error occured while importing file",
+            });
+        }
+        else {
+            console.log(" fun(): file imported successfuly");
+        }
 
     } catch (err) {
-        console.log(err);
+        console.error(err);
+
+        return res.status(500).json({
+            message: "error occured while importing file",
+        });
     }
+
     next();
 }
 

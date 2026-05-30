@@ -66,9 +66,9 @@ function setThemeviaCSSVariables(theme) {
 // <div id="phoneNum"> Number </div>
 // <a onclick="optionChange(event, 'phoneNum')"> 0300-xyz </a>
 
-function optionChange(event, displayId) {
-    const el = event.target;
-    const displayDiv = document.getElementById(displayId);
+// function optionChange(event, displayId) {
+//     const el = event.target;
+//     const displayDiv = document.getElementById(displayId);
 
-    displayDiv.innerText = el.innerText;
-}
+//     displayDiv.innerText = el.innerText;
+// }

@@ -8,7 +8,7 @@
     display: none;
 }
 
-.row { 
+.row {
     --bs-gutter-x: 0rem;
 }
 
@@ -34,6 +34,7 @@ body {
 }
 
 .glass-card {
+    font-family: sans-serif;
     width: 100%;
     max-width: 520px;
     background: var(--glasscard-background);
@@ -201,6 +202,7 @@ input[type="file"] {
     .glass-card {
         padding: 28px;
     }
+
     h1 {
         font-size: 28px;
     }

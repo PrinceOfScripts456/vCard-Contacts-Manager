@@ -1,21 +1,29 @@
 const express = require("express");
 const router = express.Router();
 
-// const ContactDB = require("../models/contact");
 const storage = require("../storage/autoStorage");
+
 
 router.get("/", async (req, res) => {
     console.log("GET: /contacts/  -> Showing all Contacts Page");
 
-    const contacts = await storage.find();
+    try {
 
-    console.log(contacts);
+        const contacts = await storage.find({});
 
-    res.render("allContacts", { contacts });
+        res.render("allContacts", { contacts });
 
-    // let c = await storage.find({}, ' fullName lastName');
-    // console.log(c);
+        console.log(contacts);
+        console.log("total:", contacts.length);
 
+    } catch (err) {
+        console.error("ERROR:", err);
+        console.log("--------------------------------");
+
+        return res.status(500).json({
+            message: "request failed",
+        });
+    }
 });
 
 module.exports = router;

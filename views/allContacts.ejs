@@ -16,11 +16,9 @@
     <%- include('partials/header') %>
 
 
-        <!-- <div class="d-flex"> -->
-        <button class="btn btn-primary" id="import-btn">import</button>
-        <input type="file" id="file-input">
-        <button class="btn btn-primary" id="export-btn">export</button>
-        <!-- </div> -->
+        <div class="position-absolute top-auto end-0">
+            <button class="btn btn-primary" id="export-btn">export</button>
+        </div>
 
 
         <!-- All Contact container -->
@@ -78,7 +76,7 @@
                             style="height:200px; object-fit:cover; background-color:#868e96;">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <%= contact.firstName + contact.lastName %>
+                                <%= contact.fullName %>
                             </h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk
                                 of the card’s content.</p>
