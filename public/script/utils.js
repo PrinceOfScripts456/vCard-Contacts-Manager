@@ -22,7 +22,6 @@ function formatSize(bytes) {
 }
 
 
-
 const AT = document.getElementById('AT');
 const LT = document.getElementById('LT');
 const DT = document.getElementById('DT');
