@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    max-width: 24rem;
+}
+
+#deleteToastBtn {
+    /* display: none; */
+}

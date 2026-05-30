@@ -1,0 +1,89 @@
+
+/* @media (prefers-color-scheme: light) { :root { */
+.light-theme {
+    --body-color: black;
+    --body-background: linear-gradient(135deg, #f8fafc, #eef2ff, #fdfdfd);
+
+    --body-background: radial-gradient(circle at top left, rgba(59,130,246,0.32), transparent 60%), 
+        radial-gradient(circle at bottom right, rgba(168,85,247,0.32), transparent 60%);
+
+    --glasscard-background: rgba(255, 255, 255, 0.75);
+    --glasscard-border: 1px solid rgba(255, 255, 255, 0.9);
+
+    --badge-background: rgba(59, 130, 246, 0.1);
+    --badge-border: 1px solid rgba(168, 85, 247, 0.32);
+    --badge-color: #7c46f9;
+
+    --dot-color: #2485fb;
+
+    --h1-color: #0f172a;
+
+    --subtitle-color: #64748b;
+
+    --uploadbox-border: 2px dashed #cbd5e1;
+    --uploadbox-background: rgba(255, 255, 255, 0.8);
+
+    --uploadbox-hover-bordercolor: #60a5fa;
+    --uploadbox-hover-background: #ffffff;
+    --uploadbox-hover-boxshadow: 0 8px 20px rgba(96, 165, 250, 0.08);
+
+    --uploadtitle-color: #334155;
+
+    --fileinfo-background: rgba(255, 255, 255, 0.06);
+    --fileinfo-border: 1px solid rgba(96, 165, 255, 0.6);
+
+    --filesize-color: #2563eb;
+
+    --uploadbtn-color: white;
+    --uploadbtn-background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+    --uploadbtn-boxshadow: 0 10px 20px rgba(96, 165, 250, 0.18);
+
+    --status-color: ;
+}
+/* } */
+
+
+/* @media (prefers-color-scheme: dark) { :root { */
+.dark-theme {
+    --body-color: white;
+    --body-background: radial-gradient(circle at top left, #7c3aed 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #06b6d4 0%, transparent 35%),
+        #0f172a;
+
+    --glasscard-background: rgba(255, 255, 255, 0.08);
+    --glasscard-border: 1px solid rgba(255, 255, 255, 0.15);
+
+    --badge-background: rgba(255, 255, 255, 0.08);
+    --badge-border: 1px solid rgba(255, 255, 255, 0.12);
+
+    --dot-color: #22c55e;
+
+    --badge-color: #cbd5e1;
+
+    /* --h1-color: #0f172a; */
+
+    --subtitle-color: #cbd5e1;
+
+    --uploadbox-border: 2px dashed rgba(255, 255, 255, 0.2);
+    --uploadbox-background: rgba(255, 255, 255, 0.04);
+
+    --uploadbox-hover-bordercolor: #8b5cf6;
+    --uploadbox-hover-background: rgba(139, 92, 246, 0.08);
+    /* --uploadbox-hover-boxshadow: 0 8px 20px rgba(96, 165, 250, 0.08); */
+
+    --uploadbox-icon-background: linear-gradient(135deg, #60a5fa, #8b5cf6);
+    --uploadbox-icon-boxshadow: 0 10px 25px rgba(96, 165, 250, 0.25);
+    /* --uploadtitle-color: #334155; */
+
+    --fileinfo-background: rgba(255, 255, 255, 0.06);
+    --fileinfo-border: 1px solid rgba(255,255,255,0.08);
+
+    --filesize-color: #94a3b8;
+
+    --uploadbtn-color: white;
+    --uploadbtn-background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+    --uploadbtn-boxshadow: 0 10px 30px rgba(139, 92, 246, 0.35);
+
+    --status-color: #cbd5e1;
+}
+/* } */

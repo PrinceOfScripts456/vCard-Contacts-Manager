@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vCards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style/allContacts.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <%- include('partials/header') %>
+
+
+        <!-- <div class="d-flex"> -->
+        <button class="btn btn-primary" id="import-btn">import</button>
+        <input type="file" id="file-input">
+        <button class="btn btn-primary" id="export-btn">export</button>
+        <!-- </div> -->
+
+
+        <!-- All Contact container -->
+        <div class="row row-cols-1 row-cols-md-3 m-3 g-4">
+
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" alt="..."
+                        style="height:200px; object-fit:cover; background-color:#868e96;">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            of
+                            the card’s content.</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">An item</li>
+                        <li class="list-group-item">A second item</li>
+                        <li class="list-group-item">A third item</li>
+                    </ul>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">Last updated 3 mins ago</small>
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" aria-hidden="true">
+                    <img class="card-img-top" alt="..."
+                        style="height:200px; object-fit:cover; background-color:#868e96;">
+                    <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                            <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-4"></span>
+                            <span class="placeholder col-6"></span>
+                            <span class="placeholder col-8"></span>
+                        </p>
+                        <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
+                    </div>
+                </div>
+            </div>
+
+            <% contacts.forEach( (contact)=> { %>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" alt="..."
+                            style="height:200px; object-fit:cover; background-color:#868e96;">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= contact.firstName + contact.lastName %>
+                            </h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card’s content.</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Phone Number:</b>
+                                <%= contact.telephone %>
+                            </li>
+                            <li class="list-group-item"><b>Email:</b>
+                                <%= contact.email %>
+                            </li>
+                            <li class="list-group-item"><b>Date:</b>
+                                <%= contact.date %>
+                            </li>
+                            <li class="list-group-item"><b>Note:</b>
+                                <%= contact.note %>
+                            </li>
+                        </ul>
+                        <div class="card-footer">
+                            <small class="text-body-secondary">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="m-2">
+                        <a data-id="<%= contact._id %>" href="/contacts/<%= contact._id %>"
+                            class="btn btn-primary mx-0 editBtn01">Edit</a>
+                        <a data-id="<%= contact._id %>" class="btn btn-danger mx-1 deleteBtn01">Delete</a>
+                    </div>
+                </div>
+                <% }); %>
+
+        </div>
+
+
+        <!-- Bootstrap Toast -->
+        <a id="deleteToastBtn">deleteToastBtn</a>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="deleteToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img class="rounded me-2" alt="...">
+                    <strong class="me-auto">Bootstrap</strong>
+                    <small>11 mins ago</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Deleted Succesfully!
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+        <script src="/script/BootStrapTheme.js"></script>
+        <script src="/script/allContacts.js"></script>
+</body>
+
+</html>

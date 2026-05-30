@@ -2,9 +2,10 @@
 This is my first project.
 
 > Development RoadMap:
-- edit contact feature
-- delete contact feature
-- to be continued...
+- improvements in routing
+- error handling
+- fix edge cases
+- final touches
 
 # node.js Commands:
 - npm init -y
